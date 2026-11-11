@@ -35,6 +35,11 @@ class TextExtractor(HTMLParser):
             self.skip += 1
         elif tag in BLOCK_TAGS:
             self.parts.append("\n")
+        if tag == "a" and not self.skip:
+            href = dict(attrs).get("href")
+            if href:
+                self.parts.append(f" [Link: {href}] ")
+
 
     def handle_endtag(self, tag):
         if tag in ("script", "style", "noscript"):
