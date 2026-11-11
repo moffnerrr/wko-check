@@ -2,7 +2,7 @@ name: WKO Volontariat Check
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # alle 15 Minuten
+    - cron: "*/5 * * * *"   # alle 15 Minuten
   workflow_dispatch:          # erlaubt den manuellen Testlauf
 
 permissions:
